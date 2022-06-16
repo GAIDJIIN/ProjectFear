@@ -1,0 +1,75 @@
+Begin Object Class=/Script/Engine.Material Name="M_Impact_Decal"
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionDesaturation Name="MaterialExpressionDesaturation_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_2"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_32"
+   End Object
+   Begin Object Name="MaterialExpressionConstant_0"
+      R=1.000000
+      MaterialExpressionEditorX=-581
+      MaterialExpressionEditorY=50
+      MaterialExpressionGuid=9F1D7C8847051D72BB36DDBA1A766E2B
+      Material=Material'"M_Impact_Decal"'
+   End Object
+   Begin Object Name="MaterialExpressionDesaturation_0"
+      Input=(Expression=MaterialExpressionTextureSample'"M_Impact_Decal:MaterialExpressionTextureSample_1"',OutputIndex=1,Mask=1,MaskR=1)
+      MaterialExpressionEditorX=-813
+      MaterialExpressionEditorY=-96
+      MaterialExpressionGuid=3E98FED04F99A74A3881FC8C50C1DB90
+      Material=Material'"M_Impact_Decal"'
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_0"
+      Alpha=(Expression=MaterialExpressionDesaturation'"M_Impact_Decal:MaterialExpressionDesaturation_0"')
+      ConstB=0.200000
+      MaterialExpressionEditorX=-578
+      MaterialExpressionEditorY=-122
+      MaterialExpressionGuid=EF7E4231403999CEECAAC8BA372F621A
+      Material=Material'"M_Impact_Decal"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_1"
+      Texture=Texture2D'"/Game/Effects/Textures/Weapon/T_bullet_hole_2.T_bullet_hole_2"'
+      MaterialExpressionEditorX=-915
+      MaterialExpressionEditorY=578
+      MaterialExpressionGuid=8A53511D44490A376E0358BDBD71092F
+      Material=Material'"M_Impact_Decal"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_2"
+      Texture=Texture2D'"/Game/Effects/Textures/Water/distortion_01.distortion_01"'
+      MaterialExpressionEditorX=-605
+      MaterialExpressionEditorY=310
+      MaterialExpressionGuid=2EC06E064EBEB89ED46310BB5E556641
+      Material=Material'"M_Impact_Decal"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_32"
+   End Object
+   BaseColor=(Expression=MaterialExpressionLinearInterpolate'"MaterialExpressionLinearInterpolate_0"')
+   Metallic=(Expression=MaterialExpressionConstant'"MaterialExpressionConstant_0"')
+   Specular=(Expression=MaterialExpressionConstant'"MaterialExpressionConstant_0"')
+   Roughness=(Expression=MaterialExpressionConstant'"MaterialExpressionConstant_0"')
+   Normal=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_2"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   EmissiveColor=(OutputIndex=-1)
+   Opacity=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_1"',OutputIndex=4,Mask=1,MaskA=1)
+   OpacityMask=(OutputIndex=-1)
+   MaterialDomain=MD_DeferredDecal
+   BlendMode=BLEND_Translucent
+   TranslucencyDirectionalLightingIntensity=0.100000
+   bDisableDepthTest=True
+   Expressions(0)=MaterialExpressionLinearInterpolate'"MaterialExpressionLinearInterpolate_0"'
+   Expressions(1)=MaterialExpressionConstant'"MaterialExpressionConstant_0"'
+   Expressions(2)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_2"'
+   Expressions(3)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_1"'
+   Expressions(4)=MaterialExpressionDesaturation'"MaterialExpressionDesaturation_0"'
+   StateId=81959B7B487D196F95FECEB0835141A0
+   CachedExpressionData=(ReferencedTextures=(Texture2D'"/Game/Effects/Textures/Water/distortion_01.distortion_01"',Texture2D'"/Game/Effects/Textures/Weapon/T_bullet_hole_2.T_bullet_hole_2"'),QualityLevelsUsed=(False,False,False,False))
+   ReferencedTextureGuids(0)=0301A3264DD898D8A7481D9AD41758F8
+   ReferencedTextureGuids(1)=D9685C2A42F5F7F8628A8B80E5EB9169
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_32"'
+   LightingGuid=A1CFF9F34F32CFDA34C6809BA7EBE606
+End Object
