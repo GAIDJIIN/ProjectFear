@@ -3,10 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Camera/CameraComponent.h"
 #include "Components/ActorComponent.h"
 #include "ADSComponent.generated.h"
 
+// Forward Declaration
+class UCameraComponent;
 
 UENUM()
 enum class EMovementType : uint8
@@ -25,15 +26,31 @@ public:
 	UADSComponent();
 	
 	// Functions
-	void StartADS(AActor* ActorToMove, EMovementType MoveStatus);
+	UFUNCTION(BlueprintCallable,Category="ADS")
+		void StartADS(EMovementType MoveStatus, USceneComponent* SceneComponentToMove, FName SocketName);
+
+	UFUNCTION(BlueprintCallable)
+		void InitializeInfo();
+	// Getter
+	UFUNCTION(BlueprintCallable, Category="Getter")
+		bool IsADS() const {return bADS;}
+
+	// Info
+	// RealtimeCurves
+	UPROPERTY(EditAnywhere)
+	FRuntimeFloatCurve ADS_Curve;
+	UPROPERTY(EditAnywhere)
+	FRuntimeFloatCurve FOV_Curve;
 protected:
 	virtual void BeginPlay() override;
-
 private:
 	// Info for Move Camera
-	AActor* ActorToMove = nullptr;
 	UCameraComponent* Camera = nullptr;
-
+	
+	// Info about ActorToMove
+	USceneComponent* MoveToComponent = nullptr;
+	FName NameToMove;
+	
 	// Timer
 	FTimerHandle TimerADS;
     float ADSTimer = 0.0f;
@@ -41,15 +58,19 @@ private:
 	// Variables
 	bool bADS = false;
 	ACharacter* Player = nullptr;
-
-	// RealtimeCurves
-	FRuntimeFloatCurve ADS_Curve;
-	FRuntimeFloatCurve FOV_Curve;
+	
 	// Functions
 	// For Start
 	void StartToMoveCameraIn();
 	void StartToMoveCameraOut();
+	
 	// For Timer
 	void MoveIn();
 	void MoveOut();
+	
+	// For Camera
+	void SetCameraProperties(FVector CameraLocation, float CameraFOV);
+
+	// Service
+	void ClearMoveInfo();
 };

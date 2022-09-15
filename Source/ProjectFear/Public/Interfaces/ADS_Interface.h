@@ -7,7 +7,7 @@
 #include "ADS_Interface.generated.h"
 
 // This class does not need to be modified.
-UINTERFACE(MinimalAPI)
+UINTERFACE(MinimalAPI,Blueprintable)
 class UADS_Interface : public UInterface
 {
 	GENERATED_BODY()
