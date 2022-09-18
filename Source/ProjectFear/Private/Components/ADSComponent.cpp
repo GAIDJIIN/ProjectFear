@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogADS,All,All)
 UADSComponent::UADSComponent()
@@ -122,4 +123,13 @@ void UADSComponent::MoveOut()
 		Camera->SetFieldOfView(90.0f);
 		Camera->SetRelativeLocation(FVector::ZeroVector);
 	}
+}
+
+// Debug Logic
+FString UADSComponent::ADSInfo() const
+{
+	FString DebugADS = "Is ADS: " + FString(bADS ? "True" : "False");
+	FString DebugComponent = "Move To Component: " + FString(MoveToComponent ? "Valid" : "Not Valid");
+	FString DebugName = "Socket Name: " + NameToMove.ToString();
+	return (DebugADS + "\n" + DebugComponent + "\n" + DebugName + "\n");
 }

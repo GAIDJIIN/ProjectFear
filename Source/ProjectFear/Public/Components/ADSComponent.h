@@ -28,12 +28,14 @@ public:
 	// Functions
 	UFUNCTION(BlueprintCallable,Category="ADS")
 		void StartADS(EMovementType MoveStatus, USceneComponent* SceneComponentToMove, FName SocketName);
-
-	UFUNCTION(BlueprintCallable)
-		void InitializeInfo();
+	
 	// Getter
 	UFUNCTION(BlueprintCallable, Category="Getter")
 		bool IsADS() const {return bADS;}
+
+	// Debug
+	UFUNCTION(BlueprintCallable)
+	FString ADSInfo() const;
 
 	// Info
 	// RealtimeCurves
@@ -43,6 +45,7 @@ public:
 	FRuntimeFloatCurve FOV_Curve;
 protected:
 	virtual void BeginPlay() override;
+	
 private:
 	// Info for Move Camera
 	UCameraComponent* Camera = nullptr;
@@ -73,4 +76,5 @@ private:
 
 	// Service
 	void ClearMoveInfo();
+	void InitializeInfo();
 };
