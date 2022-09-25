@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Project Fear. All rights reserved.
 
 
 #include "Components/ADSComponent.h"
@@ -6,7 +6,6 @@
 #include "GameFramework/Character.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/KismetMathLibrary.h"
-#include "Kismet/KismetSystemLibrary.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogADS,All,All)
 UADSComponent::UADSComponent()
@@ -60,7 +59,7 @@ void UADSComponent::InitializeInfo()
 	Camera = LocalCamera;
 }
 
-void UADSComponent::SetCameraProperties(FVector CameraLocation, float CameraFOV)
+void UADSComponent::SetCameraProperties(FVector CameraLocation, float CameraFOV) const
 {
 	if(!Camera) return;
 	Camera->SetWorldLocation(CameraLocation);
@@ -128,8 +127,8 @@ void UADSComponent::MoveOut()
 // Debug Logic
 FString UADSComponent::ADSInfo() const
 {
-	FString DebugADS = "Is ADS: " + FString(bADS ? "True" : "False");
-	FString DebugComponent = "Move To Component: " + FString(MoveToComponent ? "Valid" : "Not Valid");
-	FString DebugName = "Socket Name: " + NameToMove.ToString();
+	const FString DebugADS = "Is ADS: " + FString(bADS ? "True" : "False");
+	const FString DebugComponent = "Move To Component: " + FString(MoveToComponent ? "Valid" : "Not Valid");
+	const FString DebugName = "Socket Name: " + NameToMove.ToString();
 	return (DebugADS + "\n" + DebugComponent + "\n" + DebugName + "\n");
 }

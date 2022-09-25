@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Project Fear. All rights reserved.
 
 #pragma once
 
@@ -30,7 +30,7 @@ public:
 		void StartADS(EMovementType MoveStatus, USceneComponent* SceneComponentToMove, FName SocketName);
 	
 	// Getter
-	UFUNCTION(BlueprintCallable, Category="Getter")
+	UFUNCTION(BlueprintCallable,Category="Getter")
 		bool IsADS() const {return bADS;}
 
 	// Debug
@@ -72,7 +72,7 @@ private:
 	void MoveOut();
 	
 	// For Camera
-	void SetCameraProperties(FVector CameraLocation, float CameraFOV);
+	void SetCameraProperties(FVector CameraLocation, float CameraFOV) const;
 
 	// Service
 	void ClearMoveInfo();
