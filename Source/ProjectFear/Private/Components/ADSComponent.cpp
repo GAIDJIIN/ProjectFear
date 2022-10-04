@@ -21,7 +21,7 @@ void UADSComponent::BeginPlay()
 	check(Camera)
 }
 
-void UADSComponent::StartADS(EMovementType MoveStatus, USceneComponent* SceneComponentToMove, FName SocketName)
+void UADSComponent::StartADS(USceneComponent* SceneComponentToMove, FName SocketName)
 {
 	if(!SceneComponentToMove || !GetWorld() || SocketName.IsNone())
 	{
@@ -30,22 +30,12 @@ void UADSComponent::StartADS(EMovementType MoveStatus, USceneComponent* SceneCom
 	}
 	MoveToComponent = SceneComponentToMove;
 	NameToMove = SocketName;
-	UE_LOG(LogADS,Display,TEXT("Actor and World Valid"))
-	if(GetWorld()->GetTimerManager().IsTimerActive(TimerADS))
-	{
-		GetWorld()->GetTimerManager().ClearTimer(TimerADS);
-		UE_LOG(LogADS,Display,TEXT("Clear Timer"))
-	}
-	if(MoveStatus == EMovementType::MoveCameraIn)
-	{
-		GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::StartToMoveCameraIn,0.075f,false);
-		UE_LOG(LogADS,Display,TEXT("Start Move In"))
-	}
-	else if(MoveStatus == EMovementType::MoveCameraOut)
-	{
-		StartToMoveCameraOut();
-		UE_LOG(LogADS,Display,TEXT("Start Move Out"))
-	}
+	GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::StartToMoveCameraIn,0.075f,false);
+}
+
+void UADSComponent::StopADS()
+{
+	StartToMoveCameraOut();
 }
 
 // Set Info
@@ -75,22 +65,24 @@ void UADSComponent::ClearMoveInfo()
 // Functions For Timers
 void UADSComponent::StartToMoveCameraIn()
 {
-	if(!GetWorld()) return;
 	bADS = true;
-	GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::MoveIn,0.0075f,true);
+	ToggleADS(EMovementType::MoveCameraIn);
 }
 
 void UADSComponent::StartToMoveCameraOut()
 {
-	if(!GetWorld()) return;
 	bADS = false;
 	ClearMoveInfo();
-	GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::MoveOut,0.0075f,true);
+	ToggleADS(EMovementType::MoveCameraOut);
 }
 
 void UADSComponent::MoveIn()
 {
-	if(!MoveToComponent || !Player || !Camera || NameToMove.IsNone()) return;
+	if(!MoveToComponent || !Player || !Camera || NameToMove.IsNone())
+	{
+		CurrentMoveStatus = None;
+		return;
+	}
 	UE_LOG(LogADS,Display,TEXT("MOVE IN TIMER"))
 	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),MoveToComponent->GetSocketLocation(NameToMove),0.01f))
 	{
@@ -104,7 +96,11 @@ void UADSComponent::MoveIn()
 
 void UADSComponent::MoveOut()
 {
-	if(!Camera || !Player) return;
+	if(!Camera || !Player)
+	{
+		CurrentMoveStatus = None;
+		return;
+	}
 	UE_LOG(LogADS,Display,TEXT("MOVE OUT TIMER"))
 	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),0.01f))
 	{
@@ -116,11 +112,37 @@ void UADSComponent::MoveOut()
 	}
 	else
 	{
-		if(!GetWorld()) return;
+		if(!GetWorld() || bADS) return;
 		GetWorld()->GetTimerManager().ClearTimer(TimerADS);
+		CurrentMoveStatus = None;
 		ADSTimer = 0.0f;
 		Camera->SetFieldOfView(90.0f);
 		Camera->SetRelativeLocation(FVector::ZeroVector);
+	}
+}
+
+void UADSComponent::ToggleADS(EMovementType MoveStatus)
+{
+	if(!GetWorld()) return;
+	switch (MoveStatus) 
+	{
+	case EMovementType::MoveCameraIn:
+		if(CurrentMoveStatus != MovingIn)
+		{
+			GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::MoveIn,0.0075f,true);
+			CurrentMoveStatus = MovingIn;
+		}
+		break;
+	case EMovementType::MoveCameraOut:
+		if(CurrentMoveStatus != MovingOut)
+		{
+			GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::MoveOut,0.0075f,true);
+			CurrentMoveStatus = MovingOut;
+		}
+		break;
+	default:
+		GetWorld()->GetTimerManager().ClearTimer(TimerADS);
+		CurrentMoveStatus = None;
 	}
 }
 
@@ -130,5 +152,20 @@ FString UADSComponent::ADSInfo() const
 	const FString DebugADS = "Is ADS: " + FString(bADS ? "True" : "False");
 	const FString DebugComponent = "Move To Component: " + FString(MoveToComponent ? "Valid" : "Not Valid");
 	const FString DebugName = "Socket Name: " + NameToMove.ToString();
-	return (DebugADS + "\n" + DebugComponent + "\n" + DebugName + "\n");
+	FString DebugStatus;
+	switch (CurrentMoveStatus)
+	{
+		case EMoveStatus::MovingIn:
+			DebugStatus = "MovingIn";
+			break;
+		case EMoveStatus::MovingOut:
+			DebugStatus = "MovingOut";
+			break;
+		case EMoveStatus::None:
+			DebugStatus = "None";
+			break;
+		default:
+			break;
+	}
+	return (DebugADS + "\n" + DebugComponent + "\n" + DebugName + "\n" + DebugStatus + "\n");
 }

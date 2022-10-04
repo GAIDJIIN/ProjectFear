@@ -27,7 +27,11 @@ public:
 	
 	// Functions
 	UFUNCTION(BlueprintCallable,Category="ADS")
-		void StartADS(EMovementType MoveStatus, USceneComponent* SceneComponentToMove, FName SocketName);
+		void StartADS(USceneComponent* SceneComponentToMove, FName SocketName);
+	UFUNCTION(BlueprintCallable,Category="ADS")
+		void StopADS();
+	UFUNCTION(BlueprintCallable,Category="ADS")
+		void ToggleADS(EMovementType MoveStatus);
 	
 	// Getter
 	UFUNCTION(BlueprintCallable,Category="Getter")
@@ -77,4 +81,7 @@ private:
 	// Service
 	void ClearMoveInfo();
 	void InitializeInfo();
+
+	// Service Variables
+	enum EMoveStatus {MovingIn,MovingOut,None} CurrentMoveStatus = None;
 };
