@@ -1,6 +1,8 @@
 // Project Fear. All rights reserved.
 
 #include "Core/CharacterCore.h"
+
+#include "Camera/CameraComponent.h"
 #include "Core/InteractInterface.h"
 #include "Kismet/KismetSystemLibrary.h"
 
@@ -31,13 +33,10 @@ void ACharacterCore::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 // Interact Logic
 void ACharacterCore::FindInteract()
 {
-	if(!GetWorld()) return;
-	FVector StartTrace;
-	UKismetSystemLibrary::DrawDebugSphere(GetWorld(),StartTrace,25.0f);
-	FRotator ViewRotation;
-	const auto LocalPlayerController = GetController<APlayerController>();
-	if(!LocalPlayerController) return;
-	LocalPlayerController->GetPlayerViewPoint(StartTrace,ViewRotation);
+	if(!GetWorld() || !GetComponentByClass(UCameraComponent::StaticClass())) return;
+	const auto Camera = Cast<UCameraComponent>(GetComponentByClass(UCameraComponent::StaticClass()));
+	const FVector StartTrace = GetMesh()->GetSocketLocation(Camera->GetAttachSocketName());
+	const FRotator ViewRotation = Camera->GetComponentRotation();
 	const FVector EndTrace = StartTrace + ViewRotation.Vector()*InteractTraceDistance;
 	FHitResult LocalHitResult;
 	UKismetSystemLibrary::SphereTraceSingle(GetWorld(),

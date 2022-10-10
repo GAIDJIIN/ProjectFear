@@ -84,7 +84,7 @@ void UADSComponent::MoveIn()
 		return;
 	}
 	UE_LOG(LogADS,Display,TEXT("MOVE IN TIMER"))
-	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),MoveToComponent->GetSocketLocation(NameToMove),0.01f))
+	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),MoveToComponent->GetSocketLocation(NameToMove),0.00001f))
 	{
 		SetCameraProperties(UKismetMathLibrary::VLerp(Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),
 			MoveToComponent->GetSocketLocation(NameToMove),
@@ -102,7 +102,7 @@ void UADSComponent::MoveOut()
 		return;
 	}
 	UE_LOG(LogADS,Display,TEXT("MOVE OUT TIMER"))
-	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),0.01f))
+	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),0.00001f))
 	{
 		SetCameraProperties(UKismetMathLibrary::VLerp(Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),
 			Camera->GetComponentLocation(),
