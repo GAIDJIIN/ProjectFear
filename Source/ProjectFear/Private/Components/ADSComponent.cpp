@@ -35,6 +35,8 @@ void UADSComponent::StartADS(USceneComponent* SceneComponentToMove, FName Socket
 
 void UADSComponent::StopADS()
 {
+	if(!GetWorld()) return;
+	GetWorld()->GetTimerManager().ClearTimer(TimerADS);
 	StartToMoveCameraOut();
 }
 
@@ -83,8 +85,7 @@ void UADSComponent::MoveIn()
 		CurrentMoveStatus = None;
 		return;
 	}
-	UE_LOG(LogADS,Display,TEXT("MOVE IN TIMER"))
-	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),MoveToComponent->GetSocketLocation(NameToMove),0.00001f))
+	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),MoveToComponent->GetSocketLocation(NameToMove),0.0001f))
 	{
 		SetCameraProperties(UKismetMathLibrary::VLerp(Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),
 			MoveToComponent->GetSocketLocation(NameToMove),
@@ -101,14 +102,14 @@ void UADSComponent::MoveOut()
 		CurrentMoveStatus = None;
 		return;
 	}
-	UE_LOG(LogADS,Display,TEXT("MOVE OUT TIMER"))
-	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),0.00001f))
+	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),0.0001f))
 	{
 		SetCameraProperties(UKismetMathLibrary::VLerp(Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),
 			Camera->GetComponentLocation(),
 			ADS_Curve.GetRichCurve()->Eval(ADSTimer)),
 			UKismetMathLibrary::Lerp(90.0f,70.0f,FOV_Curve.GetRichCurve()->Eval(ADSTimer)));
 		ADSTimer = (ADSTimer - 0.045f) > 0.0f ? ADSTimer - 0.045f : 0.0f;
+		UE_LOG(LogADS,Display,TEXT("Move Out"))
 	}
 	else
 	{
