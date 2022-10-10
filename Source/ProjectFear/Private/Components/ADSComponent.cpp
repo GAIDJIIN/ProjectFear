@@ -7,7 +7,6 @@
 #include "Camera/CameraComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
-DEFINE_LOG_CATEGORY_STATIC(LogADS,All,All)
 UADSComponent::UADSComponent()
 {
 	PrimaryComponentTick.bCanEverTick = false;
@@ -35,8 +34,6 @@ void UADSComponent::StartADS(USceneComponent* SceneComponentToMove, FName Socket
 
 void UADSComponent::StopADS()
 {
-	if(!GetWorld()) return;
-	GetWorld()->GetTimerManager().ClearTimer(TimerADS);
 	StartToMoveCameraOut();
 }
 
@@ -109,16 +106,20 @@ void UADSComponent::MoveOut()
 			ADS_Curve.GetRichCurve()->Eval(ADSTimer)),
 			UKismetMathLibrary::Lerp(90.0f,70.0f,FOV_Curve.GetRichCurve()->Eval(ADSTimer)));
 		ADSTimer = (ADSTimer - 0.045f) > 0.0f ? ADSTimer - 0.045f : 0.0f;
-		UE_LOG(LogADS,Display,TEXT("Move Out"))
 	}
 	else
 	{
-		if(!GetWorld() || bADS) return;
+		if(!GetWorld() || bADS)
+		{
+			Camera->SetFieldOfView(90.0f);
+			Camera->SetRelativeLocation(FVector::ZeroVector);
+			return;
+		}
 		GetWorld()->GetTimerManager().ClearTimer(TimerADS);
-		CurrentMoveStatus = None;
 		ADSTimer = 0.0f;
 		Camera->SetFieldOfView(90.0f);
 		Camera->SetRelativeLocation(FVector::ZeroVector);
+		CurrentMoveStatus = None;
 	}
 }
 
