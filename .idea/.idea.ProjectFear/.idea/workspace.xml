@@ -7,8 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2143a627-69ae-42ac-863b-a5f797496f5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectFear/Private/Components/ADSComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectFear/Private/Components/ADSComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjectFear/Private/Core/CharacterCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectFear/Private/Core/CharacterCore.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjectFear/Public/Core/CharacterCore.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectFear/Public/Core/CharacterCore.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +177,9 @@
       <workItem from="1665394289412" duration="1717000" />
       <workItem from="1665407617877" duration="1503000" />
       <workItem from="1665417896386" duration="1369000" />
+      <workItem from="1665615322167" duration="3000" />
+      <workItem from="1665615416989" duration="55000" />
+      <workItem from="1665615798270" duration="1863000" />
     </task>
     <servers />
   </component>

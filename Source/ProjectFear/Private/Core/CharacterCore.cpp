@@ -59,22 +59,25 @@ void ACharacterCore::FindInteract()
 		const auto LocalInterface = Cast<IInteractInterface>(LocalHitResult.GetActor());
 		if(LocalInterface)
 		{
-			LocalInterface->StartHover();
-			InteractableActor = LocalInterface;
+			if(InteractableActor && InteractableActor != LocalInterface) OnLostInteract();
+			OnFindInteract(LocalInterface);
 		}
-		else if(InteractableActor)
-		{
-			InteractableActor->StopHover();
-			StopInteract();
-			InteractableActor = nullptr;
-		}
+		else if(InteractableActor) OnLostInteract();
 	}
-	else if(InteractableActor)
-	{
-		InteractableActor->StopHover();
-		StopInteract();
-		InteractableActor = nullptr;
-	}
+	else if(InteractableActor) OnLostInteract();
+}
+
+void ACharacterCore::OnFindInteract(IInteractInterface* InteractActor)
+{
+	InteractActor->StartHover();
+	InteractableActor = InteractActor;
+}
+
+void ACharacterCore::OnLostInteract()
+{
+	InteractableActor->StopHover();
+	StopInteract();
+	InteractableActor = nullptr;
 }
 
 void ACharacterCore::TryInteract()
@@ -84,6 +87,6 @@ void ACharacterCore::TryInteract()
 
 void ACharacterCore::StopInteract()
 {
-	InteractableActor->StopInteract();
+	if(InteractableActor) InteractableActor->StopInteract();
 }
 
