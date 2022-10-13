@@ -64,7 +64,6 @@ private:
 	
 	// Variables
 	bool bADS = false;
-	ACharacter* Player = nullptr;
 	
 	// Functions
 	// For Start

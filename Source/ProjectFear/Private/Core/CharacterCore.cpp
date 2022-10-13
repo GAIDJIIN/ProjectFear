@@ -5,6 +5,7 @@
 #include "Camera/CameraComponent.h"
 #include "Core/InteractInterface.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Kismet/KismetMathLibrary.h"
 
 ACharacterCore::ACharacterCore()
 {
@@ -34,11 +35,10 @@ void ACharacterCore::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 // Interact Logic
 void ACharacterCore::FindInteract()
 {
-	if(!GetWorld() || !GetComponentByClass(UCameraComponent::StaticClass())) return;
+	if(!GetWorld() || !GetComponentByClass(UCameraComponent::StaticClass()) || !GetMesh()) return;
 	const auto Camera = Cast<UCameraComponent>(GetComponentByClass(UCameraComponent::StaticClass()));
 	const FVector StartTrace = GetMesh()->GetSocketLocation(Camera->GetAttachSocketName());
-	const FRotator ViewRotation = Camera->GetComponentRotation();
-	const FVector EndTrace = StartTrace + ViewRotation.Vector()*InteractTraceDistance;
+	const FVector EndTrace = StartTrace + Camera->GetForwardVector()*InteractTraceDistance;
 	FHitResult LocalHitResult;
 	UKismetSystemLibrary::SphereTraceSingle(GetWorld(),
 		StartTrace,

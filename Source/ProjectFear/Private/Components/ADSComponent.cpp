@@ -16,7 +16,6 @@ void UADSComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	InitializeInfo();
-	check(Player)
 	check(Camera)
 }
 
@@ -40,10 +39,7 @@ void UADSComponent::StopADS()
 // Set Info
 void UADSComponent::InitializeInfo()
 {
-	ACharacter* LocalCharacter = Cast<ACharacter>(GetOwner());
-	if(!LocalCharacter) return;
-	Player = LocalCharacter;
-	UCameraComponent* LocalCamera = Cast<UCameraComponent>(Player->GetComponentByClass(UCameraComponent::StaticClass()));
+	UCameraComponent* LocalCamera = Cast<UCameraComponent>(GetOwner()->GetComponentByClass(UCameraComponent::StaticClass()));
 	if(!LocalCamera) return;
 	Camera = LocalCamera;
 }
@@ -77,14 +73,15 @@ void UADSComponent::StartToMoveCameraOut()
 
 void UADSComponent::MoveIn()
 {
-	if(!MoveToComponent || !Player || !Camera || NameToMove.IsNone())
+	if(!MoveToComponent || !Camera || NameToMove.IsNone() || !Camera->GetAttachParent())
 	{
 		CurrentMoveStatus = None;
 		return;
 	}
+	const auto CameraAttachParent = Camera->GetAttachParent(); 
 	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),MoveToComponent->GetSocketLocation(NameToMove),0.0001f))
 	{
-		SetCameraProperties(UKismetMathLibrary::VLerp(Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),
+		SetCameraProperties(UKismetMathLibrary::VLerp(CameraAttachParent->GetSocketLocation(Camera->GetAttachSocketName()),
 			MoveToComponent->GetSocketLocation(NameToMove),
 			ADS_Curve.GetRichCurve()->Eval(ADSTimer)),
 			UKismetMathLibrary::Lerp(90.0f,70.0f,FOV_Curve.GetRichCurve()->Eval(ADSTimer)));
@@ -94,14 +91,15 @@ void UADSComponent::MoveIn()
 
 void UADSComponent::MoveOut()
 {
-	if(!Camera || !Player)
+	if(!Camera || !Camera->GetAttachParent())
 	{
 		CurrentMoveStatus = None;
 		return;
 	}
-	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),0.0001f))
+	const auto CameraAttachParent = Camera->GetAttachParent();
+	if(!UKismetMathLibrary::EqualEqual_VectorVector(Camera->GetComponentLocation(),CameraAttachParent->GetSocketLocation(Camera->GetAttachSocketName()),0.0001f))
 	{
-		SetCameraProperties(UKismetMathLibrary::VLerp(Player->GetMesh()->GetSocketLocation(Camera->GetAttachSocketName()),
+		SetCameraProperties(UKismetMathLibrary::VLerp(CameraAttachParent->GetSocketLocation(Camera->GetAttachSocketName()),
 			Camera->GetComponentLocation(),
 			ADS_Curve.GetRichCurve()->Eval(ADSTimer)),
 			UKismetMathLibrary::Lerp(90.0f,70.0f,FOV_Curve.GetRichCurve()->Eval(ADSTimer)));
