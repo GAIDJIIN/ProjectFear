@@ -7,9 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2143a627-69ae-42ac-863b-a5f797496f5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FPS_Weapon_Bundle/Weapons/Meshes/AR4/SM_AR4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FPS_Weapon_Bundle/Weapons/Meshes/AR4/SM_AR4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/Inventory/BPC_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/Inventory/BPC_Inventory.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/TestLogic/Animations/ANIM_BP/AnimBP_Main.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/TestLogic/Animations/ANIM_BP/AnimBP_Main.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" afterDir="false" />
@@ -31,6 +28,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2EThnd6y8uBXlqYcxk3wW5nVoEE" />
   <component name="ProjectViewState">
@@ -188,6 +188,7 @@
       <workItem from="1665615798270" duration="1863000" />
       <workItem from="1665619196801" duration="560000" />
       <workItem from="1665621507976" duration="5171000" />
+      <workItem from="1665764981187" duration="1726000" />
     </task>
     <servers />
   </component>

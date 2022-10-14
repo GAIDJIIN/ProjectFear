@@ -12,13 +12,6 @@ UADSComponent::UADSComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 }
 
-void UADSComponent::BeginPlay()
-{
-	Super::BeginPlay();
-	InitializeInfo();
-	check(Camera)
-}
-
 void UADSComponent::StartADS(USceneComponent* SceneComponentToMove, FName SocketName)
 {
 	if(!SceneComponentToMove || !GetWorld() || SocketName.IsNone())
@@ -37,15 +30,9 @@ void UADSComponent::StopADS()
 }
 
 // Set Info
-void UADSComponent::InitializeInfo()
-{
-	UCameraComponent* LocalCamera = Cast<UCameraComponent>(GetOwner()->GetComponentByClass(UCameraComponent::StaticClass()));
-	if(!LocalCamera) return;
-	Camera = LocalCamera;
-}
-
 void UADSComponent::SetCameraProperties(FVector CameraLocation, float CameraFOV) const
 {
+	UCameraComponent* Camera = Cast<UCameraComponent>(GetOwner()->GetComponentByClass(UCameraComponent::StaticClass()));
 	if(!Camera) return;
 	Camera->SetWorldLocation(CameraLocation);
 	Camera->SetFieldOfView(CameraFOV);
@@ -73,6 +60,7 @@ void UADSComponent::StartToMoveCameraOut()
 
 void UADSComponent::MoveIn()
 {
+	UCameraComponent* Camera = Cast<UCameraComponent>(GetOwner()->GetComponentByClass(UCameraComponent::StaticClass()));
 	if(!MoveToComponent || !Camera || NameToMove.IsNone() || !Camera->GetAttachParent())
 	{
 		CurrentMoveStatus = None;
@@ -91,6 +79,7 @@ void UADSComponent::MoveIn()
 
 void UADSComponent::MoveOut()
 {
+	UCameraComponent* Camera = Cast<UCameraComponent>(GetOwner()->GetComponentByClass(UCameraComponent::StaticClass()));
 	if(!Camera || !Camera->GetAttachParent())
 	{
 		CurrentMoveStatus = None;

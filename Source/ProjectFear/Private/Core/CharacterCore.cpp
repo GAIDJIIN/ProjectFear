@@ -35,9 +35,10 @@ void ACharacterCore::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 // Interact Logic
 void ACharacterCore::FindInteract()
 {
-	if(!GetWorld() || !GetComponentByClass(UCameraComponent::StaticClass()) || !GetMesh()) return;
+	if(!GetWorld() || !GetComponentByClass(UCameraComponent::StaticClass())) return;
 	const auto Camera = Cast<UCameraComponent>(GetComponentByClass(UCameraComponent::StaticClass()));
-	const FVector StartTrace = GetMesh()->GetSocketLocation(Camera->GetAttachSocketName());
+	if(!Camera || !Camera->GetAttachParent()) return;
+	const FVector StartTrace = Camera->GetAttachParent()->GetSocketLocation(Camera->GetAttachSocketName());
 	const FVector EndTrace = StartTrace + Camera->GetForwardVector()*InteractTraceDistance;
 	FHitResult LocalHitResult;
 	UKismetSystemLibrary::SphereTraceSingle(GetWorld(),

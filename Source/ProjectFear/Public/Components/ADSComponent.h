@@ -47,12 +47,10 @@ public:
 	FRuntimeFloatCurve ADS_Curve;
 	UPROPERTY(EditAnywhere)
 	FRuntimeFloatCurve FOV_Curve;
-protected:
-	virtual void BeginPlay() override;
 	
 private:
 	// Info for Move Camera
-	UCameraComponent* Camera = nullptr;
+	//UCameraComponent* Camera = nullptr;
 	
 	// Info about ActorToMove
 	USceneComponent* MoveToComponent = nullptr;
@@ -79,7 +77,7 @@ private:
 
 	// Service
 	void ClearMoveInfo();
-	void InitializeInfo();
+	//void InitializeInfo();
 
 	// Service Variables
 	enum EMoveStatus {MovingIn,MovingOut,None} CurrentMoveStatus = None;
