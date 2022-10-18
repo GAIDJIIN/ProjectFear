@@ -40,15 +40,15 @@ public:
 	// Debug
 	UFUNCTION(BlueprintCallable)
 	FString ADSInfo() const;
-
-	// Info
-	// RealtimeCurves
-	UPROPERTY(EditAnywhere)
-	FRuntimeFloatCurve ADS_Curve;
-	UPROPERTY(EditAnywhere)
-	FRuntimeFloatCurve FOV_Curve;
 	
 private:
+	// Info
+	// RealtimeCurves
+	UPROPERTY(EditAnywhere,meta=(AllowPrivateAccess))
+	FRuntimeFloatCurve ADS_Curve;
+	UPROPERTY(EditAnywhere,meta=(AllowPrivateAccess))
+	FRuntimeFloatCurve FOV_Curve;
+	
 	// Info for Move Camera
 	//UCameraComponent* Camera = nullptr;
 	
