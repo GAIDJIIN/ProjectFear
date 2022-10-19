@@ -7,28 +7,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2143a627-69ae-42ac-863b-a5f797496f5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AnimStarterPack/UE4_Mannequin/Materials/M_UE4Man_Body.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AnimStarterPack/UE4_Mannequin/Materials/M_UE4Man_Body.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AnimStarterPack/UE4_Mannequin/Materials/M_UE4Man_ChestLogo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AnimStarterPack/UE4_Mannequin/Materials/M_UE4Man_ChestLogo.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Rifle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Rifle.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Shotgun.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Shotgun.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/S_Decals.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/S_Decals.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Materials/CubeMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Materials/CubeMaterial.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Materials/M_Glass.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Materials/M_Glass.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Materials/M_Metal_Burnished_Steel.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Materials/M_Metal_Burnished_Steel.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Materials/M_Rock_Marble_Polished.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Materials/M_Rock_Marble_Polished.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Materials/M_Wood_Oak.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Materials/M_Wood_Oak.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/PhysicsAsset/PA_Asphalt.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/PhysicsAsset/PA_Brick.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/PhysicsAsset/PA_Character.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/PhysicsAsset/PA_Glass.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/PhysicsAsset/PA_Grass.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/PhysicsAsset/PA_Metal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/PhysicsAsset/PA_Wood.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Brick_Clay_Old.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Brick_Clay_Old.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Ground_Grass.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Ground_Grass.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Wood_Oak.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Materials/M_Wood_Oak.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +192,7 @@
       <workItem from="1666079621739" duration="2100000" />
       <workItem from="1666085109855" duration="649000" />
       <workItem from="1666087083082" duration="668000" />
+      <workItem from="1666170396942" duration="1200000" />
     </task>
     <servers />
   </component>
