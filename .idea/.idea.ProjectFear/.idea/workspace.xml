@@ -7,12 +7,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2143a627-69ae-42ac-863b-a5f797496f5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/AnimStarterPack/Death_2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AnimStarterPack/Death_2.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Rifle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Rifle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Shotgun.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/ChildWeapons/BP_Shotgun.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/S_Decals.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/S_Decals.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/CharacterAbilities/BPC_Health.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/CharacterAbilities/BPC_Health.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/ServiceLibrary/ServiceFunctions.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/ServiceLibrary/ServiceFunctions.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +193,8 @@
       <workItem from="1666079621739" duration="2100000" />
       <workItem from="1666085109855" duration="649000" />
       <workItem from="1666087083082" duration="668000" />
-      <workItem from="1666170396942" duration="1200000" />
+      <workItem from="1666170396942" duration="2611000" />
+      <workItem from="1666182777338" duration="1799000" />
     </task>
     <servers />
   </component>
