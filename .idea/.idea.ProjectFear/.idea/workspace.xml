@@ -6,13 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2143a627-69ae-42ac-863b-a5f797496f5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AnimStarterPack/Death_2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AnimStarterPack/Death_2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/CharacterAbilities/BPC_Health.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/CharacterAbilities/BPC_Health.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemsINFO/DataTables/DT_Consumables.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemsINFO/DataTables/DT_Consumables.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/Inventory/BPC_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/Components/Inventory/BPC_Inventory.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/ServiceLibrary/ServiceFunctions.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/ServiceLibrary/ServiceFunctions.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/ServiceBlueprints/BP_AttachmentActor.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/TestLogic/TestMeshes/TestMeshShotgunBullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/TestLogic/TestMeshes/TestMeshShotgunBullet.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,6 +193,7 @@
       <workItem from="1666087083082" duration="668000" />
       <workItem from="1666170396942" duration="2611000" />
       <workItem from="1666182777338" duration="1799000" />
+      <workItem from="1667375875441" duration="38000" />
     </task>
     <servers />
   </component>
