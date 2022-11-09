@@ -16,6 +16,14 @@ enum class EMovementType : uint8
 	MoveCameraOut
 };
 
+UENUM()
+enum class EMoveStatus : uint8
+{
+	MovingIn,
+	MovingOut,
+	None
+};
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class PROJECTFEAR_API UADSComponent : public UActorComponent
 {
@@ -36,7 +44,8 @@ public:
 	// Getter
 	UFUNCTION(BlueprintCallable,Category="Getter")
 		bool IsADS() const {return bADS;}
-
+	UFUNCTION(BlueprintCallable,Category="Getter")
+		EMoveStatus GetMoveStatus() const { return CurrentMoveStatus; }
 	// Debug
 	UFUNCTION(BlueprintCallable)
 	FString ADSInfo() const;
@@ -48,9 +57,6 @@ private:
 	FRuntimeFloatCurve ADS_Curve;
 	UPROPERTY(EditAnywhere,meta=(AllowPrivateAccess))
 	FRuntimeFloatCurve FOV_Curve;
-	
-	// Info for Move Camera
-	//UCameraComponent* Camera = nullptr;
 	
 	// Info about ActorToMove
 	USceneComponent* MoveToComponent = nullptr;
@@ -80,5 +86,5 @@ private:
 	//void InitializeInfo();
 
 	// Service Variables
-	enum EMoveStatus {MovingIn,MovingOut,None} CurrentMoveStatus = None;
+	EMoveStatus CurrentMoveStatus = EMoveStatus::None;
 };

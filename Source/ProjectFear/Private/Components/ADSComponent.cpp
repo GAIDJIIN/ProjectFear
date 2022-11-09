@@ -63,7 +63,7 @@ void UADSComponent::MoveIn()
 	UCameraComponent* Camera = Cast<UCameraComponent>(GetOwner()->GetComponentByClass(UCameraComponent::StaticClass()));
 	if(!MoveToComponent || !Camera || NameToMove.IsNone() || !Camera->GetAttachParent())
 	{
-		CurrentMoveStatus = None;
+		CurrentMoveStatus = EMoveStatus::None;
 		return;
 	}
 	const auto CameraAttachParent = Camera->GetAttachParent(); 
@@ -82,7 +82,7 @@ void UADSComponent::MoveOut()
 	UCameraComponent* Camera = Cast<UCameraComponent>(GetOwner()->GetComponentByClass(UCameraComponent::StaticClass()));
 	if(!Camera || !Camera->GetAttachParent())
 	{
-		CurrentMoveStatus = None;
+		CurrentMoveStatus = EMoveStatus::None;
 		return;
 	}
 	const auto CameraAttachParent = Camera->GetAttachParent();
@@ -106,7 +106,7 @@ void UADSComponent::MoveOut()
 		ADSTimer = 0.0f;
 		Camera->SetFieldOfView(90.0f);
 		Camera->SetRelativeLocation(FVector::ZeroVector);
-		CurrentMoveStatus = None;
+		CurrentMoveStatus = EMoveStatus::None;
 	}
 }
 
@@ -116,31 +116,28 @@ void UADSComponent::ToggleADS(EMovementType MoveStatus)
 	switch (MoveStatus) 
 	{
 	case EMovementType::MoveCameraIn:
-		if(CurrentMoveStatus != MovingIn)
+		if(CurrentMoveStatus != EMoveStatus::MovingIn)
 		{
 			GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::MoveIn,0.0075f,true);
-			CurrentMoveStatus = MovingIn;
+			CurrentMoveStatus = EMoveStatus::MovingIn;
 		}
 		break;
 	case EMovementType::MoveCameraOut:
-		if(CurrentMoveStatus != MovingOut)
+		if(CurrentMoveStatus != EMoveStatus::MovingOut)
 		{
 			GetWorld()->GetTimerManager().SetTimer(TimerADS,this, &UADSComponent::MoveOut,0.0075f,true);
-			CurrentMoveStatus = MovingOut;
+			CurrentMoveStatus = EMoveStatus::MovingOut;
 		}
 		break;
 	default:
 		GetWorld()->GetTimerManager().ClearTimer(TimerADS);
-		CurrentMoveStatus = None;
+		CurrentMoveStatus = EMoveStatus::None;
 	}
 }
 
 // Debug Logic
 FString UADSComponent::ADSInfo() const
 {
-	const FString DebugADS = "Is ADS: " + FString(bADS ? "True" : "False");
-	const FString DebugComponent = "Move To Component: " + FString(MoveToComponent ? "Valid" : "Not Valid");
-	const FString DebugName = "Socket Name: " + NameToMove.ToString();
 	FString DebugStatus;
 	switch (CurrentMoveStatus)
 	{
@@ -156,5 +153,9 @@ FString UADSComponent::ADSInfo() const
 		default:
 			break;
 	}
-	return (DebugADS + "\n" + DebugComponent + "\n" + DebugName + "\n" + DebugStatus + "\n");
+	FString DebugInfo = "Is ADS: " + FString(bADS ? "True" : "False")+ "\n"
+	+ "Move To Component: " + FString(MoveToComponent ? "Valid" : "Not Valid") + "\n"
+	+ "Socket Name: " + NameToMove.ToString() + "\n"
+	+ DebugStatus + "\n";
+	return DebugInfo;
 }
