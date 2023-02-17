@@ -7,15 +7,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2143a627-69ae-42ac-863b-a5f797496f5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectFear/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AnimStarterPack/UE4_Mannequin/Mesh/UE4_Mannequin_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AnimStarterPack/UE4_Mannequin/Mesh/UE4_Mannequin_Skeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Animations/ABP_Manny.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Animations/ABP_Manny.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/BP_WeaponCore.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FPS_Weapon_Bundle/Weapons/Meshes/Ka47/SK_KA47_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FPS_Weapon_Bundle/Weapons/Meshes/Ka47/SK_KA47_Skeleton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/BP_ItemBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/BP_ItemBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Items/ItemBase/ItemsEquip/Weapons/PenetrationComponent/BPC_Bullet.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/Player/PlayerCore/BP_Player.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MainContent/Blueprints/ServiceLibrary/ServiceGameFunctions.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Blueprints/ServiceLibrary/ServiceGameFunctions.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MainContent/Maps/TestMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectFear/Private/Components/ADSComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectFear/Private/Components/ADSComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectFear/Public/Components/ADSComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectFear/Public/Components/ADSComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjectFear/Private/Core/CharacterCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectFear/Private/Core/CharacterCore.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjectFear/Public/Core/CharacterCore.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectFear/Public/Core/CharacterCore.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../LowPolyRoguelike/Source/VoxelRoguelike/Private/Core/CharacterCPP.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ProjectFear/Private/Core/InteractInterface.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ProjectFear/Private/Items/PickUpCore.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ProjectFear/ProjectFear.Build.cs" root0="FORCE_HIGHLIGHTING" />
@@ -201,6 +201,11 @@
       <workItem from="1667836603753" duration="4894000" />
       <workItem from="1667931887694" duration="22000" />
       <workItem from="1667931971834" duration="1928000" />
+      <workItem from="1669465783431" duration="4000" />
+      <workItem from="1669543819083" duration="4246000" />
+      <workItem from="1669653294481" duration="7626000" />
+      <workItem from="1669675995743" duration="24000" />
+      <workItem from="1674426171222" duration="597000" />
     </task>
     <servers />
   </component>

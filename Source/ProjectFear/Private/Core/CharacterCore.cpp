@@ -23,7 +23,6 @@ void ACharacterCore::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	if(bCanInteract) FindInteract();
-	else if(InteractableActor) OnLostInteract();
 }
 
 void ACharacterCore::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -92,3 +91,8 @@ void ACharacterCore::StopInteract()
 	if(InteractableActor) InteractableActor->StopInteract();
 }
 
+void ACharacterCore::SetCanInteract(const bool bInteract)
+{
+	bCanInteract = bInteract;
+	if(InteractableActor) OnLostInteract();
+}

@@ -16,7 +16,7 @@ public:
 	ACharacterCore();
 	// Setter
 	UFUNCTION(BlueprintCallable, Category="Interact Logic|Set Info")
-	void SetCanInteract(const bool bInteract) { bCanInteract = bInteract; }
+	void SetCanInteract(const bool bInteract)
 
 	// Getter
 	UFUNCTION(BlueprintCallable, Category="Interact Logic|Get Info")
